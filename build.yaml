@@ -1,0 +1,5 @@
+---
+include:
+  - board: xiao_ble//zmk
+    shield: froggr
+    snippet: studio-rpc-usb-uart

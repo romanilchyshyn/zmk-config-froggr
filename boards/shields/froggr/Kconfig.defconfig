@@ -1,0 +1,6 @@
+if SHIELD_FROGGR
+
+config ZMK_KEYBOARD_NAME
+    default "froggr"
+
+endif # SHIELD_FROGGR
