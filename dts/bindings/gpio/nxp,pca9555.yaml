@@ -1,0 +1,24 @@
+description: NXP PCA9555 I2C I/O expander
+
+compatible: "nxp,pca9555"
+
+include:
+  - name: base.yaml
+  - name: gpio-controller.yaml
+
+properties:
+  reg:
+    required: true
+  ngpios:
+    type: int
+    required: false
+    default: 16
+    description: Number of gpios supported
+  interrupt-gpios:
+    type: phandle-array
+    required: false
+    description: Interrupt GPIO pin connected to the INT line
+
+gpio-cells:
+  - pin
+  - flags
