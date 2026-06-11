@@ -1,4 +1,5 @@
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: froggr
+    snippet: studio-rpc-usb-uart
