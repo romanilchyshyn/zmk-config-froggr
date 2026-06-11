@@ -5,7 +5,7 @@
  * Rows: D6/P1.11, D5/P0.05, D4/P0.04, D3/P0.29
  * I2C:  SCL=D1/P0.03, SDA=D2/P0.28 (non-standard; D4/D5 used for rows)
  * PCA9555 address: 0x20 (A0=A1=A2=GND)
- * Diode direction: col2row
+ * Diode direction: row2col (cathode on row side)
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
@@ -35,29 +35,29 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         wakeup-source;
 
         col-gpios
-            = <&pca9555  0 GPIO_ACTIVE_LOW>
-            , <&pca9555  1 GPIO_ACTIVE_LOW>
-            , <&pca9555  2 GPIO_ACTIVE_LOW>
-            , <&pca9555  3 GPIO_ACTIVE_LOW>
-            , <&pca9555  4 GPIO_ACTIVE_LOW>
-            , <&pca9555  5 GPIO_ACTIVE_LOW>
-            , <&pca9555  6 GPIO_ACTIVE_LOW>
-            , <&pca9555  7 GPIO_ACTIVE_LOW>
-            , <&pca9555  8 GPIO_ACTIVE_LOW>
-            , <&pca9555  9 GPIO_ACTIVE_LOW>
-            , <&pca9555 10 GPIO_ACTIVE_LOW>
-            , <&pca9555 11 GPIO_ACTIVE_LOW>
+            = <&pca9555  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pca9555 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
 
         row-gpios
-            = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&xiao_d 6 GPIO_ACTIVE_LOW>
+            , <&xiao_d 5 GPIO_ACTIVE_LOW>
+            , <&xiao_d 4 GPIO_ACTIVE_LOW>
+            , <&xiao_d 3 GPIO_ACTIVE_LOW>
             ;
     };
 };
