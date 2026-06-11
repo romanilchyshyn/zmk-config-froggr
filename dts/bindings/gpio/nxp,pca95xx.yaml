@@ -1,6 +1,6 @@
-description: NXP PCA9555 I2C I/O expander
+description: NXP PCA95XX I2C I/O expander
 
-compatible: "nxp,pca9555"
+compatible: "nxp,pca95xx"
 
 include:
   - name: base.yaml

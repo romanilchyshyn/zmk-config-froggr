@@ -86,7 +86,7 @@
     pinctrl-names = "default", "sleep";
 
     pca9555: gpio_expander@20 {
-        compatible = "nxp,pca9555";
+        compatible = "nxp,pca95xx";
         reg = <0x20>;
         gpio-controller;
         #gpio-cells = <2>;
