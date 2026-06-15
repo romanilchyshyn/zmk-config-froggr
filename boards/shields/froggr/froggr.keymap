@@ -26,4 +26,16 @@
             >;
         };
     };
+
+    combos {
+        compatible = "zmk,combos";
+
+        // Q + W + E together unlocks ZMK Studio (base layer only)
+        combo_studio_unlock {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&studio_unlock>;
+            layers = <0>;
+        };
+    };
 };
